@@ -1,0 +1,10 @@
+{
+    "image": "docker.io/python:3.11-slim-bullseye",
+    "customizations": {
+        "vscode": {
+          "extensions": ["ms-python.python", "ms-python.isort", "ms-python.flake8"]
+        }
+    },
+    "postCreateCommand": "apt update && apt install git -y",
+    "postStartCommand": "pip install pip-tools && pip-compile && pip-sync"
+}
